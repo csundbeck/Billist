@@ -1,26 +1,16 @@
-<script src="http://code.jquery.com/jquery.js"></script>
-<script type="text/javascript">
+let restaurantName = "";
+let billAmount = 0.00;
+let tipAmount = 0.00;
+let totalAmount = 0.00;
+let totalBill = 0.00;
+let tipPercent = 0.00;
 
-var billAmount = document.getElementById("billAmt").value;
-var tipAmount = document.getElementById("tipAmt").value;
-var totalAmount = 0.00;
-var totalBill = "";
-var tipPercent = document.getElementById("tipPercentage").value;
-
-// document.getElementById("calculateTotalBill").onclick = function() {
-//
-//   billAmount = document.getElementById("billAmt").value;
-//   tipAmount = document.getElementById("tipAmt").value;
-//   totalAmount = +billAmount + +tipAmount;
-//
-//   totalBill = "$" + totalAmount.toFixed(2);
-//
-//   document.getElementById("totalBill").value = totalBill;
-//
-//   tipPercentage = Math.round((tipAmount / billAmount) * 100);
-//
-//   document.getElementById("tipPercentage").value = tipPercentage + "%";
-// }
+ var billEntree = {
+   "Restaurant Name": restaurantName.value,
+   "Bill Amount": billAmount.value,
+   "Tip Amount": tipAmount.value,
+   "Total Bill": totalBill.value,
+ };
 
   $('#slider').on('input', function(){
     $('#tipPercentage').val($('#slider').val());
@@ -31,14 +21,63 @@ var tipPercent = document.getElementById("tipPercentage").value;
     tipAmount = document.getElementById("tipAmt").value;
     tipPercent = document.getElementById("tipPercentage").value;
 
-    tipAmount = ((+billAmount) * (+tipPercent)) / 100;
-    finalAmount = +billAmount + +tipAmount;
+    tipAmount = (((+billAmount) * (+tipPercent)) / 100).toFixed(2);
+    finalAmount = (+billAmount + +tipAmount).toFixed(2);
 
-    totalTip = "$" + tipAmount.toFixed(2);
-    finalBill = "$" + finalAmount.toFixed(2);
-
-    document.getElementById("tipAmt").value = totalTip;
-    document.getElementById("totalBill").value = finalBill;
+    document.getElementById("tipAmt").value = "$" + tipAmount;
+    document.getElementById("totalBill").value = "$" + finalAmount;
   }
 
-</script>
+   //Send data button
+   document.getElementById("submit").onclick = function() {
+
+     $(function() {
+       $('#billForm').submit(function(event) {
+         event.preventDefault();
+
+         var newBillEntree = $(this);
+         var submitButton = $('input[type=submit]', newBillEntree);
+
+         $.ajax({
+           type: 'POST',
+           url: newBillEntree.prop('action'),
+           accept: {
+             javascript: 'application/javascript'
+           },
+           data: newBillEntree.serialize(),
+           beforeSend: function() {
+             submitButton.prop('disabled', 'disabled');
+           }
+          }).done(function(data) {
+            submitButton.prop('disabled', false);
+          });
+        });
+      });
+
+
+     // let restaurantName = document.getElementById("restaurantName").value;;
+     // let billAmount = document.getElementById("billAmt").value;
+     // let tipAmount = document.getElementById("tipAmt").value;
+     // let totalBill = document.getElementById("totalAmount").value;
+     //
+     //  let billEntree = {
+     //    "Restaurant Name": restaurantName,
+     //    "Bill Amount":  billAmount,
+     //    "Tip Amount": tipAmount,
+     //    "Total Bill": totalBill,
+     //  };
+     //
+     //  let billEntreeObject = JSON.stringify(billEntree);
+     //  localStorage.setItem("newBillEntree", billEntreeObject);
+
+  }
+
+//Clear button
+  document.getElementById("clear").onclick = function() {
+    document.getElementById("restaurantName").value = null;
+    document.getElementById("billAmt").value = null;
+    document.getElementById("tipAmt").value = null;
+    document.getElementById("tipPercentage").value = null;
+    document.getElementById("totalBill").value = null;
+
+  }
