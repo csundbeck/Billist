@@ -28,7 +28,7 @@ let tipPercent = 0.00;
     document.getElementById("totalBill").value = "$" + finalAmount;
   }
 
-   //Send data button
+   //Save data button
    document.getElementById("submit").onclick = function() {
 
      $(function() {
@@ -54,24 +54,6 @@ let tipPercent = 0.00;
         });
       });
 
-
-     // let restaurantName = document.getElementById("restaurantName").value;;
-     // let billAmount = document.getElementById("billAmt").value;
-     // let tipAmount = document.getElementById("tipAmt").value;
-     // let totalBill = document.getElementById("totalAmount").value;
-     //
-     //  let billEntree = {
-     //    "Restaurant Name": restaurantName,
-     //    "Bill Amount":  billAmount,
-     //    "Tip Amount": tipAmount,
-     //    "Total Bill": totalBill,
-     //  };
-     //
-     //  let billEntreeObject = JSON.stringify(billEntree);
-     //  localStorage.setItem("newBillEntree", billEntreeObject);
-
-  }
-
 //Clear button
   document.getElementById("clear").onclick = function() {
     document.getElementById("restaurantName").value = null;
@@ -81,3 +63,4 @@ let tipPercent = 0.00;
     document.getElementById("totalBill").value = null;
 
   }
+}
