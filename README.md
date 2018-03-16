@@ -1,0 +1,2 @@
+# Billist
+Do you hate having to keep track of paper receipts when you go out to eat? Wouldn't you rather be able to see all of them at the touch of a button? Billist provides a solution. This Javascript project focuses on implementing a tip calculator that will calculate the subtotal, tip percentage, tip amount, and total amount all with the click of a button. It will also record the restaurant name so that the user can remember where the bill was paid. Organization is key, and that is where Billist excels.
