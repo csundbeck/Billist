@@ -54,13 +54,6 @@ let tipPercent = 0.00;
         });
       });
 
-//Clear button
-  document.getElementById("clear").onclick = function() {
-    document.getElementById("restaurantName").value = null;
-    document.getElementById("billAmt").value = null;
-    document.getElementById("tipAmt").value = null;
-    document.getElementById("tipPercentage").value = null;
-    document.getElementById("totalBill").value = null;
 
-  }
+
 }
