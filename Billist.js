@@ -1,9 +1,9 @@
-let restaurantName = "";
-let billAmount = 0.00;
-let tipAmount = 0.00;
-let totalAmount = 0.00;
-let totalBill = 0.00;
-let tipPercent = 0.00;
+let restaurantName = $("#restaurantName").val();
+let billAmount = $("#billAmt").val();
+let tipAmount = $("#tipAmt").val();
+let totalAmount = $("#totalBill").val();
+let totalBill = $("#totalBill").val();
+let tipPercent = $("#tipPercentage").val();
 
  var billEntree = {
    "Restaurant Name": restaurantName.value,
@@ -16,17 +16,17 @@ let tipPercent = 0.00;
     $('#tipPercentage').val($('#slider').val());
   });
 
-  document.getElementById("calculateTotalBill").onclick = function() {
-    billAmount = document.getElementById("billAmt").value;
-    tipAmount = document.getElementById("tipAmt").value;
-    tipPercent = document.getElementById("tipPercentage").value;
+  $("#calculateTotalBill").click(function() {
+    billAmount = $("#billAmt").val();
+    tipAmount = $("#tipAmt").val();
+    tipPercent = $("#tipPercentage").val();
 
     tipAmount = (((+billAmount) * (+tipPercent)) / 100).toFixed(2);
     finalAmount = (+billAmount + +tipAmount).toFixed(2);
 
-    document.getElementById("tipAmt").value = "$" + tipAmount;
-    document.getElementById("totalBill").value = "$" + finalAmount;
-  }
+    $("#tipAmt").val("$" + tipAmount);
+    $("#totalBill").val("$" + finalAmount);
+  })
 
    //Save data button
    document.getElementById("submit").onclick = function() {
@@ -53,7 +53,4 @@ let tipPercent = 0.00;
           });
         });
       });
-
-
-
 }
