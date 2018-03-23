@@ -1,16 +1,17 @@
 let restaurantName = $("#restaurantName").val();
+let date = $("#date-box").val();
 let billAmount = $("#billAmt").val();
 let tipAmount = $("#tipAmt").val();
 let totalAmount = $("#totalBill").val();
 let totalBill = $("#totalBill").val();
 let tipPercent = $("#tipPercentage").val();
 
- var billEntree = {
-   "Restaurant Name": restaurantName.value,
-   "Bill Amount": billAmount.value,
-   "Tip Amount": tipAmount.value,
-   "Total Bill": totalBill.value,
- };
+ // var billEntree = {
+ //   "Restaurant Name": restaurantName.value,
+ //   "Bill Amount": billAmount.value,
+ //   "Tip Amount": tipAmount.value,
+ //   "Total Bill": totalBill.value,
+ // };
 
   $('#slider').on('input', function(){
     $('#tipPercentage').val($('#slider').val());
@@ -53,4 +54,11 @@ let tipPercent = $("#tipPercentage").val();
           });
         });
       });
+
+      subRestaurantName = restaurantName;
+      subDate = date;
+      subBillAomunt = billAmt;
+      subTipAmount = tipAmount;
+      subTotalBill = totalBill;
+
 }
