@@ -15,17 +15,20 @@
   <body>
 
     <div id="recordForm">
-      <p id="subRestaurantName"></p>
-      <p id="subDate"></p>
-      <p id="subBillAomunt"></p>
-      <p id="subTipAmount"></p>
-      <p id="subTotalBill"></p>
+      <img src="F:\Portfolio\Projects\Billist\images\billist_logo.PNG" alt="billist_logo">
+      <script type="text/javascript">
+        document.write("<p>Restaurant Name: " + localStorage.restaurantName + "</p>");
+        document.write("<p>Date: " + localStorage.date + "</p>");
+        document.write("<p>Bill Amount: $" + localStorage.billAmount + "</p>");
+        document.write("<p>Tip Amount: $" + localStorage.tipAmount + "</p>");
+        document.write("<p>Total Bill: " + localStorage.totalBill + "</p>");
+      </script>
+      <br />
+      <a href="Billist.html"><input type="button" class="field buttons" id="clear-storage" value="New Bill"></a>
     </div>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="F:\Portfolio\Projects\Billist\Billist.js"></script>
-  <script type="text/javascript" src="F:\Portfolio\Projects\Billist\record.js"></script>
-
 
 </body>
 </html>
