@@ -14,11 +14,13 @@
 
   <body>
 
+  <a id="view-bills" href="record.html">View My Billist</a>
+
   <form id="billForm" method="post" action="record.html">
     <img src="F:\Portfolio\Projects\Billist\images\billist_logo.PNG" alt="billist_logo">
     <input type="text" name="restaurantName" class="field textField" id="restaurantName" placeholder="Restaurant Name" required> </br>
     <input type="date" class="field textField" id="date-box" required>
-    <input type="number" step="0.01" name="billAmount" class="field textField" id="billAmt" placeholder="Bill Amount ($)" required> </br>
+    <input type="number" step="0.01" name="billAmount" class="field textField" id="billAmt" onfocus="handleChange()" placeholder="Bill Amount ($)" required> </br>
     <input type="text" name="tipPercentage" class="field textField" id="tipPercentage" placeholder="Tip Percentage (%)" readonly required> </br>
     <input type="range" class="slider" min="0" max="100" step="1" value="50" id="slider"> </br>
     <input type="text" name="tipAmount" class="field textField" id="tipAmt" placeholder="Tip Amount ($)" readonly required> </br>

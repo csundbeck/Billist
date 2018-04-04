@@ -100,4 +100,13 @@ margin: 3% 35%;
   font-size: 130%;
 }
 
+#view-bills {
+  color: #ffffff;
+  float: right;
+  font-family: 'Jockey One', sans-serif;
+  margin-right: 2%;
+  margin-top: -3%;
+  font-size: 18px;
+}
+
 </style>
