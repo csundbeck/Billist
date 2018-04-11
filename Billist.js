@@ -18,8 +18,8 @@ let tipPercent = $("#tipPercentage").val();
     tipAmount = (((+billAmount) * (+tipPercent)) / 100).toFixed(2);
     finalAmount = (+billAmount + +tipAmount).toFixed(2);
 
-    $("#tipAmt").val("$" + tipAmount);
-    $("#totalBill").val("$" + finalAmount);
+    var tipAmt = $("#tipAmt").hide().fadeIn(250).val("$" + tipAmount);
+    var totalBill = $("#totalBill").hide().fadeIn(250).val("$" + finalAmount);
   })
 
   const saveValues = () => {
