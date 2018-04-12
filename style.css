@@ -1,5 +1,3 @@
-<style>
-
 body {
   background-color: #6A1B9A;
 }
@@ -102,11 +100,17 @@ margin: 3% 35%;
 
 #view-bills {
   color: #ffffff;
-  float: right;
+  right: 0;
   font-family: 'Jockey One', sans-serif;
   margin-right: 2%;
-  margin-top: -3%;
   font-size: 18px;
+  position: absolute;
 }
 
-</style>
+input:read-only {
+    opacity: .6;
+}
+
+input#tipPercentage {
+    opacity: 1;
+}
