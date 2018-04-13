@@ -10,6 +10,12 @@
   body {
     background-color: #6A1B9A;
   }
+
+  /* p {
+    color: #ffffff;
+    font-family: 'Jockey One', sans-serif;
+    font-size: 12px;
+  } */
   </style>
 
   <body>

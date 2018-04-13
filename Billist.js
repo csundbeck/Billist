@@ -4,10 +4,15 @@ let billAmount;
 let tipAmount;
 let totalAmount;
 let totalBill;
-let tipPercent;
+let tipPercent = $('tipPercentage').val();
+
+  $( function() {
+    $( "#datepicker" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
+  });
 
   $('#slider').on('input', function(){
     $('#tipPercentage').val($('#slider').val());
+    document.getElementById("tipPercentage").innerHTML = tipPercent + "%";
 
     billAmount = $("#billAmt").val();
     tipAmount = $("#tipAmount").val();

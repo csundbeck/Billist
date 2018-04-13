@@ -34,7 +34,8 @@ if ($conn->query($sql) === TRUE) {
   <head>
     <title>Billist</title>
       <link rel="stylesheet" href="style.css">
-      <link href="https://fonts.googleapis.com/css?family=Jockey+One" rel="stylesheet">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jockey+One">
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   </head>
 
 <style>
@@ -51,16 +52,18 @@ if ($conn->query($sql) === TRUE) {
     <img src="images/billist_logo.PNG" alt="billist_logo">
     <input type="text" name="restaurantName" class="field textField" id="restaurantName" placeholder="Restaurant Name" required> </br>
     <input type="date" name="date" class="field textField" id="date-box" required>
+    <!-- <input type="text" name="date" id="datepicker" class="field textField" placeholder="Date" required> -->
     <input type="number" step="0.01" name="billAmount" class="field textField" id="billAmt" placeholder="Bill Amount ($)" required> </br>
-    <input type="text" name="tipPercentage" class="field textField" id="tipPercentage" placeholder="Tip Percentage (%)" readonly required> </br>
+    <p name="tipPercentage" class="field textField" id="tipPercentage">--%</p>
     <input type="range" class="slider" name="slider" min="0" max="100" step="1" value="50" id="slider"> </br>
     <input type="text" name="tipAmount" class="field textField" id="tipAmount" placeholder="Tip Amount ($)" readonly required> </br>
     <input type="text" name="totalAmount" class="field textField" placeholder="Total Bill Amount ($)" id="totalBill" readonly required> </br>
     <input type="submit" name="submit" class="field buttons" id="submit" onclick="saveValues()" value="Save This Bill">
-    <input type="reset" name="clear" class="field buttons" value="Clear">
+    <input type="reset" name="clear" id="clear" class="field buttons" value="Clear">
   </form>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script type="text/javascript" src="Billist.js"></script>
 
 </body>
