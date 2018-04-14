@@ -51,10 +51,9 @@ if ($conn->query($sql) === TRUE) {
   <form id="billForm" method="post" action="index.php">
     <img src="images/billist_logo.PNG" alt="billist_logo">
     <input type="text" name="restaurantName" class="field textField" id="restaurantName" placeholder="Restaurant Name" required> </br>
-    <input type="date" name="date" class="field textField" id="date-box" required>
-    <!-- <input type="text" name="date" id="datepicker" class="field textField" placeholder="Date" required> -->
+    <input type="text" name="date" id="datepicker" class="field textField" placeholder="Date" required>
     <input type="number" step="0.01" name="billAmount" class="field textField" id="billAmt" placeholder="Bill Amount ($)" required> </br>
-    <p name="tipPercentage" class="field textField" id="tipPercentage">--%</p>
+    <p name="tipPercentage" class="field textField" id="tipPercentage"></p>
     <input type="range" class="slider" name="slider" min="0" max="100" step="1" value="50" id="slider"> </br>
     <input type="text" name="tipAmount" class="field textField" id="tipAmount" placeholder="Tip Amount ($)" readonly required> </br>
     <input type="text" name="totalAmount" class="field textField" placeholder="Total Bill Amount ($)" id="totalBill" readonly required> </br>
