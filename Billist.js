@@ -15,7 +15,7 @@ let totalBill;
     tipAmount = $("#tipAmount").val();
 
     $('#tipPercentage').val($('#slider').val());
-    document.getElementById("tipPercentage").innerHTML = $("#tipPercentage").val() + "%";
+    document.getElementById("tipPercentage").innerHTML = "Tip Percentage: " + $("#tipPercentage").val() + "%";
 
     tipAmount = (((+billAmount) * (+$("#tipPercentage").val())) / 100).toFixed(2);
     finalAmount = (+billAmount + +tipAmount).toFixed(2);
