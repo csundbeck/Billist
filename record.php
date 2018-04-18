@@ -11,17 +11,13 @@
     background-color: #6A1B9A;
   }
 
-  /* p {
-    color: #ffffff;
-    font-family: 'Jockey One', sans-serif;
-    font-size: 12px;
-  } */
   </style>
 
   <body>
 
     <div id="recordForm">
       <img src="images/billist_logo.PNG" alt="billist_logo">
+
       <?php
           $servername = "localhost";
           $username = "root";
@@ -41,11 +37,17 @@
           if ($result->num_rows > 0) {
               // output data of each row
               while($row = $result->fetch_assoc()) {
-                  echo "Date: " . $row["theDate"]. " Restaurant Name: " . $row["restaurantName"]. " Subtotal:  " . $row["billAmount"]. " Tip Amount: " . $row["tipAmount"] . " Total Bill: " . $row["totalBill"]."<br>";
+                  echo "<p style='color:#ffffff; font-size:18px; font-family:'Jockey One', sans-serif;'>" . "Date: " . $row["theDate"]. "
+                  , Restaurant Name: " . $row["restaurantName"]. "
+                  , Subtotal:  " . $row["billAmount"]. "
+                  , Tip Amount: " . $row["tipAmount"] . "
+                  , Total Bill: " . $row["totalBill"] . "</p>";
               }
+
           } else {
-              echo "0 Bills saved";
+              echo "<p style='color:#ffffff; font-size:18px; font-family:'Jockey One', sans-serif;'>" . "Your Billist is empty!" . "</p>";
           }
+
           $conn->close();
       ?>
 

@@ -90,19 +90,14 @@ margin: 3% 35%;
 }
 
 #recordForm {
-  width: 50%;
-  margin: 5% 25%;
+  width: 75%;
+  margin: 5% 20%;
   background-color: #9B59B6;
   box-shadow: 5px 5px 8px black;
   border-radius: 20px;
   padding: 1% 0;
   padding-right: 3%;
-  padding-left: 5%;
-}
-
-#recordForm p {
-  font-family: 'Jockey One', sans-serif;
-  font-size: 130%;
+  padding-left: 3%;
 }
 
 #view-bills {

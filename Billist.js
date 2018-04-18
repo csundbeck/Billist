@@ -10,12 +10,11 @@ let totalBill;
   });
 
   $('#slider').on('input', function(){
+    $('#tipPercentage').val($('#slider').val());
+    document.getElementById("tipPercentage").innerHTML = $("#tipPercentage").val() + "%";
 
     billAmount = $("#billAmt").val();
     tipAmount = $("#tipAmount").val();
-
-    $('#tipPercentage').val($('#slider').val());
-    document.getElementById("tipPercentage").innerHTML = "Tip Percentage: " + $("#tipPercentage").val() + "%";
 
     tipAmount = (((+billAmount) * (+$("#tipPercentage").val())) / 100).toFixed(2);
     finalAmount = (+billAmount + +tipAmount).toFixed(2);
