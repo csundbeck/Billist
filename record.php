@@ -37,15 +37,15 @@
           if ($result->num_rows > 0) {
               // output data of each row
               while($row = $result->fetch_assoc()) {
-                  echo "<p style='color:#ffffff; font-size:18px; font-family:'Jockey One', sans-serif;'>" . "Date: " . $row["theDate"]. "
+                  echo "<div class='record'><p style=\"color:#ffffff; font-size:18px; font-family:'Jockey One', sans-serif;\">" . "Date: " . $row["theDate"]. "
                   , Restaurant Name: " . $row["restaurantName"]. "
-                  , Subtotal:  " . $row["billAmount"]. "
-                  , Tip Amount: " . $row["tipAmount"] . "
-                  , Total Bill: " . $row["totalBill"] . "</p>";
+                  , Subtotal:  $" . $row["billAmount"]. "
+                  , Tip Amount: $" . $row["tipAmount"] . "
+                  , Total Bill: $" . $row["totalBill"] . "</p></div>";
               }
 
           } else {
-              echo "<p style='color:#ffffff; font-size:18px; font-family:'Jockey One', sans-serif;'>" . "Your Billist is empty!" . "</p>";
+              echo "<p style=\"color:#ffffff; font-size:18px; font-family:'Jockey One', sans-serif;\">" . "Your Billist is empty!" . "</p>";
           }
 
           $conn->close();
@@ -56,7 +56,7 @@
     </div>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="F:\Portfolio\Projects\Billist\Billist.js"></script>
+  <script type="text/javascript" src="/Billist/Billist.js"></script>
 
 </body>
 </html>

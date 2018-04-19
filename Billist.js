@@ -6,7 +6,7 @@ let totalAmount;
 let totalBill;
 
   $(function() {
-    $( "#datepicker" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
+    $( "#datepicker" ).datepicker({ minDate: -30, maxDate: "+0D" });
   });
 
   $('#slider').on('input', function(){
@@ -34,3 +34,7 @@ let totalBill;
     localStorage.setItem("tipAmount", tipAmount);
     localStorage.setItem("totalBill", totalBill);
   }
+
+  $("#clear").click(function() {
+    $("#tipPercentage").text("--%");
+  })
