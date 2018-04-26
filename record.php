@@ -31,7 +31,7 @@
               die("Connection failed: " . $conn->connect_error);
           }
 
-          $sql = "SELECT restaurantName, theDate, billAmount, tipAmount, totalBill FROM billentrees";
+          $sql = "SELECT restaurantName, theDate, billAmount, tipAmount, totalBill, imageFile FROM billentrees";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
@@ -41,11 +41,12 @@
                   , Restaurant Name: " . $row["restaurantName"]. "
                   , Subtotal:  $" . $row["billAmount"]. "
                   , Tip Amount: $" . $row["tipAmount"] . "
-                  , Total Bill: $" . $row["totalBill"] . "</p></div>";
+                  , Total Bill: $" . $row["totalBill"] . "
+                  , Reciept Image: <img src='/Billist/uploads/" . $row["imageFile"] . "'></p></div>";
               }
 
           } else {
-              echo "<p style=\"color:#ffffff; font-size:18px; font-family:'Jockey One', sans-serif;\">" . "Your Billist is empty!" . "</p>";
+              echo "<h2 style=\"color:#ffffff; font-size:18px; font-family:'Jockey One', sans-serif;\">" . "Your Billist is empty!" . "</h1>";
           }
 
           $conn->close();

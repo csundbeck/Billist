@@ -6,7 +6,7 @@ let totalAmount;
 let totalBill;
 
   $(function() {
-    $( "#datepicker" ).datepicker({ minDate: -30, maxDate: "+0D" });
+    $("#datepicker").datepicker({ minDate: -30, maxDate: "+0D" });
   });
 
   $('#slider').on('input', function(){
