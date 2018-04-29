@@ -64,6 +64,7 @@ if(isset($_POST['submit'])) {
   $tipAmount = $billAmount * ($sliderValue / 100);
   $totalBill = $billAmount + $tipAmount;
 
+  //Named in phpMyAdmin columns
   $sql = "INSERT INTO billentrees (restaurantName, theDate, billAmount, tipAmount, totalBill, imageFile)
   VALUES ('".$_POST["restaurantName"]."','".$_POST["date"]."','".$_POST["billAmount"]."','".$tipAmount."','".$totalBill."','".$uploadedFile."')";
 }
