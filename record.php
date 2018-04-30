@@ -46,7 +46,7 @@
               }
 
           } else {
-              echo "<h2 style=\"color:#ffffff; font-size:18px; font-family:'Jockey One', sans-serif;\">" . "Your Billist is empty!" . "</h1>";
+              echo "<br /><h2 style=\"color:#ffffff; font-size: 30px; font-family:'Jockey One', sans-serif; text-align: center;\">" . "Your Billist is empty!" . "</h1><br />";
           }
 
           $conn->close();
