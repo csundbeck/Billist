@@ -1,7 +1,10 @@
+<!-- This file will save values and write to the database -->
 <?php
+//This is the directory where the receipt images will be saved
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
+//Reads file path and converts to lower case if necessary
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -24,7 +27,7 @@ if ($_FILES["fileToUpload"]["size"] > 5000000) {
     echo " Sorry, your file is too large.";
     $uploadOk = 0;
 }
-// Allow certain file formats
+// Allow certain file formats (JPG, PNG, JPEG, GIF)
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
     echo " Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
@@ -44,31 +47,35 @@ if ($uploadOk == 0) {
 ?>
 
 <?php
-
+//Identifying the server and database
 $servername = "localhost";
 $username = "root";
 $password = "root";
 $dbname = "billist";
 
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
 $uploadedFile = basename( $_FILES["fileToUpload"]["name"]);
 
+//Check if the submit button was clicked
 if(isset($_POST['submit'])) {
-
+//Server-side calculations
   $sliderValue = $_POST["slider"];
   $billAmount = $_POST["billAmount"];
   $tipAmount = $billAmount * ($sliderValue / 100);
   $totalBill = $billAmount + $tipAmount;
 
-  //Named in phpMyAdmin columns
+  //Inserting the values into the database (same names of phpMyAdmin columns)
   $sql = "INSERT INTO billentrees (restaurantName, theDate, billAmount, tipAmount, totalBill, imageFile)
   VALUES ('".$_POST["restaurantName"]."','".$_POST["date"]."','".$_POST["billAmount"]."','".$tipAmount."','".$totalBill."','".$uploadedFile."')";
 }
 
+//If everything was passed to the database...Success!
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
 }
@@ -110,7 +117,7 @@ if ($conn->query($sql) === TRUE) {
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script type="text/javascript" src="Billist.js"></script>
+  <script type="text/javascript" src="billist.js"></script>
 
 </body>
 </html>

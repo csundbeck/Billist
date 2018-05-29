@@ -1,3 +1,4 @@
+<!-- This file will read from the database to the results page -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,6 +20,7 @@
       <img src="images/billist_logo.PNG" alt="billist_logo">
 
       <?php
+      //Identifying the server and database
           $servername = "localhost";
           $username = "root";
           $password = "root";
@@ -31,11 +33,13 @@
               die("Connection failed: " . $conn->connect_error);
           }
 
+          //Querying the database for all columns in the billentrees table
           $sql = "SELECT restaurantName, theDate, billAmount, tipAmount, totalBill, imageFile FROM billentrees";
           $result = $conn->query($sql);
 
+          //If the query is not empty on return...
           if ($result->num_rows > 0) {
-              // output data of each row
+              // Output data of each row
               while($row = $result->fetch_assoc()) {
                   echo "<div class='record'><p style=\"color:#ffffff; font-size:18px; font-family:'Jockey One', sans-serif;\">" . "Date: " . $row["theDate"]. "
                   , Restaurant Name: " . $row["restaurantName"]. "
@@ -45,10 +49,12 @@
                   , Reciept Image: <img src='/Billist/uploads/" . $row["imageFile"] . "'></p></div>";
               }
 
+            //If it does return an empty query...
           } else {
               echo "<br /><h2 style=\"color:#ffffff; font-size: 30px; font-family:'Jockey One', sans-serif; text-align: center;\">" . "Your Billist is empty!" . "</h1><br />";
           }
 
+          //Close the connection
           $conn->close();
       ?>
 
@@ -57,7 +63,7 @@
     </div>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/Billist/Billist.js"></script>
+  <script type="text/javascript" src="/Billist/billist.js"></script>
 
 </body>
 </html>
